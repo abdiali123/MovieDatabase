@@ -3,15 +3,18 @@
 
     <!-- Strings for the Sort By Menu -->
     <string name="ma_sort_by">Sort By</string>
-    <string name="ma_sort_by_most_popular">Most Popular</string>
-    <string name="ma_sort_by_highest_rated">Highest Rated</string>
+    <string name="ma_start">Sort By</string>
+    <string name="ma_sort_by_most_popular">Show Most Popular</string>
+    <string name="ma_sort_by_highest_rated">Show Highest Rated</string>
+    <string name="ma_sort_by_playing">Show Now Playing</string>
     <string name="ma_refresh">Refresh</string>
+    <string name="ma_start_music">Start Music</string>
+    <string name="ma_stop_music">Stop Music</string>
 
     <!-- Main Activity strings -->
     <string name="ma_error_message">Sorry, we were unable to fetch movie data form the Internet.\nCheck your connection or try again later.</string>
 
     <!-- Detail Activity strings -->
-    <string name="da_tools_plot">The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien\'s 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, with over 150 million copies sold.</string>
     <string name="da_rating_max">/10</string>
 
     <!-- Base URL to fetch the images from MovieDB.org -->
@@ -23,5 +26,6 @@
     <string name="intent_plot">Plot</string>
     <string name="intent_voting">Vote</string>
     <string name="intent_release_date">Release Date</string>
+    <string name="da_tools_plot">Movie database for sdu android programming</string>
 
 </resources>

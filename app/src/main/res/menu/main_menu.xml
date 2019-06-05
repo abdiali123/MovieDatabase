@@ -10,8 +10,29 @@
         android:title="@string/ma_refresh"
         app:showAsAction="ifRoom" />
     <item
-        android:icon="@drawable/baseline_filter_list_white_24"
+        android:icon="@drawable/baseline_queue_music_white_24"
         android:orderInCategory="2"
+        android:title="@string/ma_start"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group
+                android:id="@+id/group_music"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_start"
+                    android:checked="false"
+                    android:title="@string/ma_start_music" />
+                <item
+                    android:id="@+id/menu_stop"
+                    android:checked="false"
+                    android:title="@string/ma_stop_music" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:icon="@drawable/baseline_filter_list_white_24"
+        android:orderInCategory="3"
         android:title="@string/ma_sort_by"
         app:showAsAction="ifRoom">
         <menu>
@@ -26,6 +47,10 @@
                     android:id="@+id/menu_sort_by_highest_rated"
                     android:checked="false"
                     android:title="@string/ma_sort_by_highest_rated" />
+                <item
+                    android:id="@+id/menu_sort_by_playing"
+                    android:checked="false"
+                    android:title="@string/ma_sort_by_playing" />
             </group>
         </menu>
     </item>

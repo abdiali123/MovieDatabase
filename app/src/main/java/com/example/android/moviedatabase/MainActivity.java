@@ -2,7 +2,9 @@ package com.example.android.moviedatabase;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
     private static final int SPAN_COUNT = 2;
     private static final int ORDER_BY_POPULAR = 0;
     private static final int ORDER_BY_RATED = 1;
+    private static final int ORDER_BY_PLAYING = 3;
     private static int orderBy = ORDER_BY_POPULAR;
 
     private RecyclerView mRecyclerView;
@@ -34,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
     private TextView mErrorMessageTextView;
 
     private ProgressBar mLoadingIndicator;
+
+    private MediaService mediaService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,11 +87,29 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
             return true;
         }
 
+        if  (id == R.id.menu_sort_by_playing){
+            mMovieAdapter.setMoviePosterId(null);
+            item.setChecked(true);
+            orderBy = ORDER_BY_PLAYING;
+            loadMovieData(orderBy);
+            return true;
+        }
+
         if (id == R.id.menu_refresh) {
             mMovieAdapter.setMoviePosterId(null);
             loadMovieData(orderBy);
             return true;
         }
+
+        if (id == R.id.menu_start){
+            startService(new Intent(this, MediaService.class));
+        }
+
+        if (id == R.id.menu_stop){
+            stopService(new Intent(this, MediaService.class));
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 

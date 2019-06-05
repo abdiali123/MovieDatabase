@@ -20,9 +20,12 @@ public final class NetworkUtils {
     private static final String RATED_URL =
             "https://api.themoviedb.org/3/movie/top_rated";
 
+    private static final String NOW_PLAYING =
+            "https://api.themoviedb.org/3/movie/upcoming";
+
     private static String baseUrl;
     private static String language = "en-US";
-    private static String api_key = "eada521d5dcfcae6e66958f905fca906";
+    private static String api_key = "505487fe2848c4ef8cea68ddd82fe838";
     private static String page = "1";
 
     private final static String API_KEY_PARAM = "api_key";
@@ -34,8 +37,11 @@ public final class NetworkUtils {
             case 1:
                 baseUrl = RATED_URL;
                 break;
-            default:
+            case 0:
                 baseUrl = POPULAR_URL;
+                break;
+            case 3:
+                baseUrl = NOW_PLAYING;
         }
 
         Uri builtUri = Uri.parse(baseUrl).buildUpon()
